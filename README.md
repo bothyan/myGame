@@ -1,4 +1,8 @@
-# myGame
+﻿# myGame
 html canvas game
 
-1、snaker
+1、贪吃蛇
+
+2、消消乐
+
+3、2048
