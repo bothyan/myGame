@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="Keywords" content="贪吃蛇" />
+<meta name="Description" content="贪吃蛇" />
+<title>贪吃蛇</title>
+<style>
+.pbody{
+  width:620px;
+  margin:0px auto;
+}
+.tips{
+  width:620px;
+  font-size:25px;
+  font-weight:bold;
+  line-height:50px;
+}
+.mainBox{
+  width:600px; 
+  height:600px; 
+  border:solid #000 10px;  
+}
+.span0{
+   background:#d77655; 
+   width:18px; 
+   height:18px;
+   float:left; 
+   border:1px solid grey;
+   }
+button{ 
+   margin-left:0px;
+} 
+.span1{
+   background:#c2c2c2; 
+   width:18px; 
+   height:18px;
+   float:left;
+   border:1px solid grey;   
+} 
+.grade{
+  color:red;
+}
+</style>
+</head>
+<body onload = "init()">
+	<div class="pbody">
+	    <div class="tips">上下左右控制移动;空格键:暂停/开始;长度:
+		    <span id="grade" class="grade">3</span>
+			<button onclick = "window.location.reload();">再来一次</button>
+		</div>
+		<div id = "mainBox" class="mainBox"> 
+		</div>
+	</div>
+	<input style="width:100px;height:30px;"></input>
+</body>
+<script>
+    var spanArr = []; //地图中的span
+	var sign = [];    //记录span是否属于蛇体
+	var speArr = [];  //蛇体的span
+	var direction = [[0, -1], [-1, 0], [0, 1], [1, 0]];//左，下，右，上方向数组
+	var speed = 200;  //定时器速度
+    var dnum = 0;     //按方向键
+	var flag = false;
+	var timeHandle = null; //定时器
+	var length = 0;
+	document.onkeydown = function(evt) {	// 按键监听	
+	    evt.preventDefault(); 
+		if (evt.which === 32) { // 空格暂停
+			pause();
+			return;
+		}		
+		var keyNum = evt.which - 37;
+		if (keyNum < 0 || keyNum > 4) return; //监听左上右下（37、38、39、40）
+		if (Math.abs(dnum - keyNum) !== 2){
+			dnum = keyNum;                       
+		}	
+	}	
+    function init(){
+	    var mainBox = document.getElementById("mainBox");
+        for(var i=0;i<30*30;i++){	 
+          var tagSpan = document.createElement("span");
+		  tagSpan.className = "span0";
+          mainBox.appendChild(tagSpan);		  
+		  spanArr.push(tagSpan);		  
+		  sign[i] = false;		  
+		}			    
+	    var a, row, col;
+		while(true) {
+			a = parseInt(Math.random() * 600);
+			row = Math.floor(a / 30) + 1;
+			col = a - (row - 1) * 30 + 1;
+			if (Math.abs(row - 1) < 5 || Math.abs(row - 30) < 5 || Math.abs(col - 1) < 5 || Math.abs(col - 30) < 5) continue;
+            break;  
+		}
+	    dnum = Math.floor(Math.random() * 4);	// 左上右下
+		var middleR = row + direction[dnum][0];
+		var middleC = col + direction[dnum][1];
+		var frontR = row + direction[dnum][0]+direction[dnum][0];
+		var frontC = col + direction[dnum][1]+direction[dnum][1];
+		var ma = (middleR - 1) * 30 + middleC - 1;
+		var fa = (frontR - 1) * 30 + frontC - 1;
+		spanArr[a].className = spanArr[ma].className = spanArr[fa].className = "span1";
+		sign[a] = sign[ma] = sign[fa] = true;	
+		speArr.push(fa,ma, a);
+		createFood();
+        timeHandle = window.setInterval(function() {move()},speed);		
+        pause();		
+	}
+	
+	function move(){
+	    var firstIndex = speArr[0];	
+		var row = Math.floor(firstIndex / 30) + 1;
+		var col = firstIndex - (row - 1) * 30 + 1;
+		var frontR = row + direction[dnum][0];
+		var frontC = col + direction[dnum][1];
+	    if (frontR < 1 || frontR > 30 || frontC < 1 || frontC > 30) {
+			clearInterval(timeHandle);			
+			alert("呵呵,撞墙了！成绩为"+document.getElementById("grade").innerHTML+"分");
+			return;
+			}
+		switch (dnum){ 
+			case 0 : firstIndex -= 1;break; 
+			case 1 : firstIndex -= 30;break;            
+			case 2 : firstIndex += 1;break; 			
+			case 3 : firstIndex += 30; break; 
+		} 	
+		if(spanArr[firstIndex].className == "span1"){
+		    if(sign[firstIndex] === true){		
+               clearInterval(timeHandle);			
+			   alert("呵呵，撞到自己了！成绩为"+document.getElementById("grade").innerHTML+"分");
+			   return;
+			}else{
+			   sign[firstIndex] = true;	
+			   speArr.unshift(firstIndex);
+			   var grade = document.getElementById("grade").innerHTML;
+			   document.getElementById("grade").innerHTML =  parseInt(grade)+1;
+			   createFood();
+			}
+		}else{
+			var lastIndex = speArr.pop();		
+			sign[lastIndex] = false;
+			spanArr[lastIndex].className = "span0";
+			speArr.unshift(firstIndex);
+			sign[firstIndex] = true;
+			spanArr[firstIndex].className = "span1";
+        }		
+	}	
+	function createFood(){
+	    while(true) {
+			var food = parseInt(Math.random() * 600);
+			if (sign[food] === true) continue;			
+			spanArr[food].className = "span1";
+            break;  
+		}
+	}
+
+    function pause() {
+		if (flag == false) {
+			flag = true;
+			clearInterval(timeHandle);
+		}
+		else{
+			flag = false;
+			timeHandle = window.setInterval(function() {move()}, speed);
+		}
+	}
+
+</script>
+</html>
