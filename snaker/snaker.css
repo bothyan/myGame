@@ -1,0 +1,35 @@
+.pbody{
+  width:620px;
+  margin:0px auto;
+}
+.tips{
+  width:620px;
+  font-size:25px;
+  font-weight:bold;
+  line-height:50px;
+}
+.mainBox{
+  width:600px; 
+  height:600px; 
+  border:solid #000 10px;  
+}
+.span0{
+   background:#d77655; 
+   width:18px; 
+   height:18px;
+   float:left; 
+   border:1px solid grey;
+   }
+button{ 
+   margin-left:0px;
+} 
+.span1{
+   background:#c2c2c2; 
+   width:18px; 
+   height:18px;
+   float:left;
+   border:1px solid grey;   
+} 
+.grade{
+  color:red;
+}
