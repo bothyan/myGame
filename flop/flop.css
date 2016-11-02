@@ -1,0 +1,63 @@
+
+    body{
+        background-color:black;
+    }
+    #main{
+      overflow:hidden;
+    }
+    .layer{
+        position:absolute !important;
+        -ms-user-select:none;
+        -webkit-user-select:none;
+    }
+    .surface{
+        position:absolute !important;
+        top:0px;
+        left:0px;
+        width:320px;
+        height:480px;
+        background:pink;
+    }  
+    .card {
+        background-color:blue;
+        font-size:20px;
+        line-height:90px;
+        text-align:center;
+         cursor:pointer;
+    }
+    .card:hover {
+            background-color:#0ba9f8;
+        }
+    .timer {
+        background-color:gold;
+        border:2px solid yellow;
+        text-align:center;
+        line-height:50px;
+        font-size:25px;
+    }
+    .flip{
+        transition:all 0.8s;
+        transform:rotateY(180deg);
+					-moz-transition:all 0.8s;
+        -moz-transform:rotateY(180deg);
+					-webkit-transition:all 0.8s;
+        -webkit-transform:rotateY(180deg);
+    }
+    .resetflip{
+        transition:all 0.8s;
+        transform:rotateY(0deg);
+					-moz-transition:all 0.8s;
+        -moz-transform:rotateY(0deg);
+					-webkit-transition:all 0.8s;
+        -webkit-transform:rotateY(0deg);
+        background-color:blue;
+    }
+    .startButton {
+        font-size:25px;
+        background-color:gold;
+        border:1px solid yellow;
+        text-align:center;
+        line-height:50px;
+        border-radius:15px;
+        cursor:pointer;
+    }

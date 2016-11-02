@@ -6,3 +6,5 @@ html canvas game
 2、消消乐
 
 3、2048
+
+4、翻转消除
