@@ -8,3 +8,5 @@ html canvas game
 3、2048
 
 4、翻转消除
+
+5、大富翁

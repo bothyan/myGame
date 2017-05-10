@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+<!--[if IE 6 ]> <html id="ne_wrap" class="ne_ua_ie6 ne_ua_ielte8"> <![endif]-->
+<!--[if IE 7 ]> <html id="ne_wrap" class="ne_ua_ie7 ne_ua_ielte8"> <![endif]-->
+<!--[if IE 8 ]> <html id="ne_wrap" class="ne_ua_ie8 ne_ua_ielte8"> <![endif]-->
+<!--[if IE 9 ]> <html id="ne_wrap" class="ne_ua_ie9"> <![endif]-->
+<!--[if (gte IE 10)|!(IE)]><!--> <html id="ne_wrap"> <!--<![endif]-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'/>
+<meta name="viewport" id="viewport" content="target-densitydpi=device-dpi,width=640,user-scalable=no" />
+<title>足球大富翁</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+
+<link rel="stylesheet" href="css/m_game.css" />
+<script src="../common/jquery.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<!-- 音效 -->
+    <audio controls="controls" id="bgm"  hidden="hidden" loop="loop" autoplay="autoplay"> 
+        <source src="http://file.ws.126.net/f2e/sports/sports_game2015/files/bgm.ogg" type="audio/ogg" />
+        <source src="http://file.ws.126.net/f2e/sports/sports_game2015/files/bgm.mp3" type="audio/mpeg" />
+    </audio>
+    <audio controls="controls" id="m_money" hidden="hidden">
+        <source src="http://file.ws.126.net/f2e/sports/sports_game2015/files/money.ogg" type="audio/ogg" /> 
+        <source src="http://file.ws.126.net/f2e/sports/sports_game2015/files/money.mp3" type="audio/mpeg" />
+    </audio>
+    <audio controls="controls" id="step" hidden="hidden" loop="loop" autoplay="autoplay">
+        <source src="http://file.ws.126.net/f2e/sports/sports_game2015/files/step.ogg" type="audio/ogg" />  
+        <source src="http://file.ws.126.net/f2e/sports/sports_game2015/files/step.mp3" type="audio/mpeg" />
+    </audio>
+    <audio controls="controls" id="game_over" hidden="hidden">
+        <source src="http://file.ws.126.net/f2e/sports/sports_game2015/files/game_over.ogg" type="audio/ogg" /> 
+        <source src="http://file.ws.126.net/f2e/sports/sports_game2015/files/game_over.mp3" type="audio/mpeg" />
+    </audio>
+    <h1>前进吧，体育</h1> 
+<div class="swiper-container">     			
+	<div class="light"></div>	
+	<img class="logo" src="images/mobile/b_logo.png" />
+    <img class="logo_t" src="images/mobile/logo_t.png" />
+	<div class="state">
+		<p>2015年，体育资本市场暗涌流动，这是机遇和挑战并存的一年。而热爱体育的你，而热爱体育的你，也获得了来自网易体育赞助的1000万的启动资金，去进行体育商业投资。掷出骰子决定你的行动路线，每一步你都可以选择买买买或者放弃。投资有风险，花钱须谨慎哦！</p>
+		<span id="start" class="start">懂了！开始钱进</span>
+	</div>
+    <div class="main_map" id="main_map">
+    	<div class="field">
+            <div class="go_num" id="go_num"></div>
+    		<img class="head" id="head" src="images/mobile/head.png" />
+            <ul class="grid" id="grid">
+                <li style="left:458px;top:408px;"></li>
+                <li style="left:403px;top:408px;"></li>
+                <li style="left:348px;top:408px;"></li>
+                <li style="left:293px;top:408px;"></li>
+                <li style="left:238px;top:408px;"></li>
+                <li style="left:183px;top:408px;"></li>
+                <li style="left:183px;top:353px;"></li>
+                <li style="left:183px;top:299px;"></li>
+                <li style="left:128px;top:299px;"></li>
+                <li style="left:72px;top:299px;"></li>
+                <li style="left:16px;top:299px;"></li>
+                <li style="left:16px;top:244px;"></li>
+                <li style="left:16px;top:189px;"></li>
+                <li style="left:16px;top:134px;"></li>
+                <li style="left:16px;top:79px;"></li>
+                <li style="left:16px;top:24px;"></li>
+                <li style="left:71px;top:24px;"></li>
+                <li style="left:126px;top:24px;"></li>
+                <li style="left:181px;top:24px;"></li>
+                <li style="left:236px;top:24px;"></li>
+                <li style="left:291px;top:24px;"></li>
+                <li style="left:346px;top:24px;"></li>
+                <li style="left:346px;top:79px;"></li>
+                <li style="left:346px;top:134px;"></li>
+                <li style="left:401px;top:134px;"></li>
+                <li style="left:456px;top:134px;"></li>
+                <li style="left:511px;top:134px;"></li>
+                <li style="left:566px;top:134px;"></li>
+                <li style="left:566px;top:189px;"></li>
+                <li style="left:566px;top:244px;"></li>
+                <li style="left:566px;top:299px;"></li>
+                <li style="left:566px;top:408px;"></li>
+            </ul>    
+    	</div>	
+        <div class="money" id="money"></div>   
+        <div class="change_money" id="change_money"></div>   
+    	<img class="box" src="images/mobile/box.png"/>
+    	<img class="go" id="go" src="images/mobile/go.gif"/>
+        <img class="gesture" id="gesture" src="images/mobile/gesture.gif"/>	
+    	<img class="man" src="images/mobile/man.png"/> 
+        <img class="dim" src="images/mobile/dim.png"/>  
+        <img class="end_img" src="images/mobile/end_img.png"/> 
+        <div class="end_money" id="end_money"></div> 
+    </div>
+    <div class="move_start pop" id="move_start"></div>   
+    <div class="move_end pop" id="move_end"></div> 
+    <div class="game_end" id="game_end"></div> 
+</div>
+
+<script type="text/template" id="move_start_template">
+    <h2 class="name" data-placeId="{{placeId}}" data-specialTag="{{speciaTag}}">{{title}}</h2>  
+    <p class="des">{{description}}</p>
+    <ul class="options">
+        {{each options}}
+        <li class="option" data-des="{{$value.description}}" data-ending="{{$value.ending}}" data-id="{{$value.id}}" data-tag="{{$value.tag}}" data-move="{{$value.moveA}}" data-income="{{$value.income}}" data-expend="{{$value.expend}}" data-title="{{title}}">{{$value.name}}</li> 
+        {{/each}}
+    </ul> 
+</script>
+<script type="text/template" id="move_end_template">
+    <h2 class="name" data-specialTag="{{moveTag}}">{{title}}</h2>  
+    <p class="des">{{description}}</p>
+    <span class="button" data-move="{{move}}">{{ending}}</span> 
+</script>
+<script type="text/template" id="game_end_template">
+    <div class="conclusion">{{conclusion}}</div> 
+    <div class="tag_tips">我们还发现原来你还是一个</div>
+    <div class="tag">{{tag}}</div> 
+    <p class="tag_des">{{tagDes}}</p>
+    <div class="button_box">
+        <span class="share" id="share">分享给朋友</span>
+        <span class="restart" id="restart">再玩一遍赚更多</span>
+    </div>
+    <img src="{{sharePic}}" style="display:none;" />  
+</script>        
+<script src="js/arttemplate.js" type="text/javascript" ></script>
+<script src="js/h5share_fixed.js" type="text/javascript" ></script>
+<script src="js/json.js" type="text/javascript"></script>
+<script src="js/predeal.js" type="text/javascript" ></script>
+<script src="js/m_game.js"></script>
+
+</body>
+</html>

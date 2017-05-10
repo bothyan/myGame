@@ -1,0 +1,166 @@
+<!DOCTYPE HTML>
+<!--[if IE 6 ]> <html id="ne_wrap" class="ne_ua_ie6 ne_ua_ielte8"> <![endif]-->
+<!--[if IE 7 ]> <html id="ne_wrap" class="ne_ua_ie7 ne_ua_ielte8"> <![endif]-->
+<!--[if IE 8 ]> <html id="ne_wrap" class="ne_ua_ie8 ne_ua_ielte8"> <![endif]-->
+<!--[if IE 9 ]> <html id="ne_wrap" class="ne_ua_ie9"> <![endif]-->
+<!--[if (gte IE 10)|!(IE)]><!--> <html id="ne_wrap"> <!--<![endif]-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>足球大富翁</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="stylesheet" href="css/sports_game2015.css" />
+<link rel="stylesheet" href="css/share.css" />
+<script src="../common/jquery.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<div class="browser_tips"><span>您的浏览器版本过低，请使用Chrome浏览器、Firefox浏览器或IE9以上浏览器观赏~</span></div>
+<div class="bg">
+	<!-- 音效start -->
+	<audio controls="controls" id="bgm" loop="loop" autoplay="autoplay" hidden="hidden">
+		<source src="http://file.ws.126.net/f2e/sports/sports_game2015/files/bgm.ogg" type="audio/ogg" />
+		<source src="http://file.ws.126.net/f2e/sports/sports_game2015/files/bgm.mp3" type="audio/mpeg" />
+	</audio>
+	<audio controls="controls" id="m_money" hidden="hidden">
+		<source src="http://file.ws.126.net/f2e/sports/sports_game2015/files/money.ogg" type="audio/ogg" />	
+		<source src="http://file.ws.126.net/f2e/sports/sports_game2015/files/money.mp3" type="audio/mpeg" />
+	</audio>
+	<audio controls="controls" id="step" hidden="hidden">
+		<source src="http://file.ws.126.net/f2e/sports/sports_game2015/files/step.ogg" type="audio/ogg" />	
+		<source src="http://file.ws.126.net/f2e/sports/sports_game2015/files/step.mp3" type="audio/mpeg" />
+	</audio>
+	<audio controls="controls" id="game_over" hidden="hidden">
+		<source src="http://file.ws.126.net/f2e/sports/sports_game2015/files/game_over.ogg" type="audio/ogg" />	
+		<source src="http://file.ws.126.net/f2e/sports/sports_game2015/files/game_over.mp3" type="audio/mpeg" />
+	</audio>
+	<audio controls="controls" id="crash" hidden="hidden">
+		<source src="http://file.ws.126.net/f2e/sports/sports_game2015/files/crash.ogg" type="audio/ogg" />	
+		<source src="http://file.ws.126.net/f2e/sports/sports_game2015/files/crash.mp3" type="audio/mpeg" />
+	</audio>
+	<!-- 音效end -->
+	<h1 class="logo">前进吧，体育</h1> 
+	<div class="money" id="money"></div>
+	<div class="change_money" id="change_money">
+	</div>
+	<div class="ball_field">
+		<!-- 页面元素 -->
+		<img src="images/ball_field.png" class="field" border="0" usemap="#ballfield" alt="足球场"/>
+		<img src="images/man1.png"  class="man man1" alt="踢球的人1"/>
+		<img src="images/man2.png"  class="man man2" alt="踢球的人2"/>
+		<img src="images/man3.png"  class="man man3" alt="踢球的人3"/>
+		<img src="images/ball.png"  class="ball" id="ball" alt="足球"/>
+		<img src="images/ball_mark.png"  class="ball_mark" id="ball_mark" alt="1"/>
+		<img src="images/num1.png"  class="num num1" alt="1"/>
+		<img src="images/num2.png"  class="num num2" alt="2"/>	
+		<img src="images/num3.png"  class="num num3" alt="3"/>	
+		<img src="images/num4.png"  class="num num4" alt="4"/>	
+		<img src="images/num5.png"  class="num num5" alt="5"/>	
+		<img src="images/num6.png"  class="num num6" alt="6"/>
+		<img src="images/marker1.png"  class="marker marker1" alt="特殊事件1"/>
+		<img src="images/marker2.png"  class="marker marker2" alt="特殊事件2"/>
+		<img src="images/marker3.png"  class="marker marker3" alt="特殊事件3"/>
+		<img src="images/marker4.png"  class="marker marker4" alt="特殊事件4"/>
+		<img src="images/marker5.png"  class="marker marker5" alt="特殊事件5"/>
+		<img src="images/marker6.png"  class="marker marker6" alt="特殊事件6"/>
+		<img src="images/marker7.png"  class="marker marker7" alt="特殊事件7"/>			
+		<img src="images/go.gif"  class="go" id="go" alt="开始"/>
+		<img src="http://img2.cache.netease.com/f2e/sports/sports_game2015/images/man_left.png"  class="man_go" id="man_go" alt="行走的人"/>
+		<map name="ballfield" id="ballfield">
+			<area data-left="597" data-top="376" shape="poly" coords="584,530,639,482,721,514,666,564"  alt="第1步">
+			<area data-left="514" data-top="346" shape="poly" coords="497,494,556,450,634,479,577,526"  alt="第2步">
+			<area data-left="435" data-top="314" shape="poly" coords="417,464,477,420,550,448,492,492"  alt="第3步">
+			<area data-left="357" data-top="288" shape="poly" coords="340,432,402,390,471,416,410,460"  alt="第4步">
+			<area data-left="282" data-top="262" shape="poly" coords="266,404,329,364,395,388,333,430"  alt="第5步">
+			<area data-left="215" data-top="239" shape="poly" coords="197,375,260,337,322,363,259,401"  alt="第6步">
+			<area data-left="143" data-top="214" shape="poly" coords="130,349,195,312,253,336,191,373"  alt="第7步">
+			<area data-left="79" data-top="193" shape="poly" coords="65,326,130,291,187,312,123,348"  alt="第8步">
+			<area data-left="147" data-top="160" shape="poly" coords="137,286,195,255,251,275,193,307"  alt="第9步">
+			<area data-left="209" data-top="130" shape="poly" coords="201,252,263,223,313,241,257,271"  alt="第10步">
+			<area data-left="269" data-top="100" shape="poly" coords="264,218,315,191,370,209,318,237"  alt="第11步">
+			<area data-left="325" data-top="73" shape="poly" coords="321,188,369,162,422,179,375,206"  alt="第12步">
+			<area data-left="380" data-top="45" shape="poly" coords="375,159,420,135,473,150,428,176"  alt="第13步">
+			<area data-left="430" data-top="21" shape="poly" coords="426,132,469,109,521,123,477,147"  alt="第14步">
+			<area data-left="488" data-top="34" shape="poly" coords="484,149,528,125,582,141,543,163"  alt="第15步">
+			<area data-left="534" data-top="12" shape="poly" coords="534,122,573,100,626,114,587,137"  alt="第16步">
+			<area data-left="577" data-top="-8" shape="poly" coords="578,98,617,77,666,90,631,111"  alt="第17步">
+			<area data-left="634" data-top="6" shape="poly" coords="636,113,673,92,728,106,692,127"  alt="第18步">
+			<area data-left="697" data-top="20" shape="poly" coords="698,130,735,108,790,122,756,146"  alt="第19步">
+			<area data-left="759" data-top="38" shape="poly" coords="762,147,799,124,855,140,822,163"  alt="第20步">
+			<area data-left="726" data-top="66" shape="poly" coords="723,174,760,149,819,165,782,192"  alt="第21步">
+			<area data-left="682" data-top="87" shape="poly" coords="678,204,717,178,779,196,741,222"  alt="第22步">
+			<area data-left="744" data-top="107" shape="poly" coords="747,224,786,196,847,215,812,242"  alt="第23步">
+			<area data-left="818" data-top="126" shape="poly" coords="819,246,858,218,922,235,887,264"  alt="第24步">
+			<area data-left="891" data-top="144" shape="poly" coords="895,268,931,238,998,258,965,288"  alt="第25步">			
+			<area data-left="970" data-top="166" shape="poly" coords="973,291,1007,259,1079,279,1046,312"  alt="第26步">
+			<area data-left="1050" data-top="193" shape="poly" coords="1055,314,1088,283,1161,303,1131,335"  alt="第27步">
+			<area data-left="1021" data-top="228" shape="poly" coords="1015,353,1048,319,1128,341,1093,377"  alt="第28步">
+			<area data-left="980" data-top="269" shape="poly" coords="973,395,1011,358,1089,383,1053,420"  alt="第29步">
+			<area data-left="936" data-top="312" shape="poly" coords="928,441,967,400,1048,427,1011,470"  alt="第30步">
+			<area data-left="887" data-top="355" shape="poly" coords="879,491,923,448,1006,475,963,520"  alt="第31步">
+
+			<area data-left="774" data-top="436" shape="poly" coords="674,565,783,465,957,529,859,636"  alt="起始终点">
+		</map>		
+	</div>		
+	<div class="tips">
+		<a href="javascript:void(0)" class="phone tipsa" id="phone"><label>手机</label></a>
+		<a href="javascript:void(0)" class="help tipsa" id="help"><label>帮助</label></a>
+	</div>		
+</div>
+<div class="overlay" id="overlay"></div>
+<div class="pop pop_phone" id="pop_phone">
+	<div class="close"></div>
+	<h2>用手机也能挣钱哦！</h2>
+	<img src="images/code.png" class="code"/>
+</div>	
+<div class="pop_help pop" id="pop_help">
+	<h2>钱进吧！体育</h2>	
+	<div class="pop_content">
+		<p>2015年，体育资本市场暗涌流动，这是机遇和挑战并存的一年。而热爱体育的你，而热爱体育的你，也获得了来自网易体育赞助的1000万的启动资金，去进行体育商业投资。掷出骰子决定你的行动路线，每一步你都可以选择买买买或者放弃。投资有风险，花钱须谨慎哦！</p>
+		<span class="help_button" id="help_botton">懂了！开始钱进</span>
+	</div>
+</div>
+<div class="pop_start pop" id="pop_start"></div>
+<div class="pop_end pop" id="pop_end"></div>
+<div class="game_end pop" id="game_end"></div>	
+<script type="text/template" id="game_end_template">
+	<p class="step_tips">最终你赚到了</p>
+	<div class="name">{{money}}</div>
+	<div class="conclusion">{{conclusion}}</div>
+	<img src="{{bgUrl}}" class="end_img"/>
+	<hr>
+	<p class="tag_tips">我们还发现原来你还是一个</p>
+	<span class="tag">{{tag}}</span>
+	<p class="tag_des">{{tagDes}}</p>
+	<div class="end_button">
+		<span id="share_weibo">分享给朋友</span>
+		<span id="restart">在玩一边赚更多</span>
+	</div>
+</script>
+<script type="text/template" id="pop_start_template">
+	<p class="step_tips">前进了<span>{{stepNum}}</span>步之后，你来到了———</p>
+	<div class="name" data-placeId="{{placeId}}" data-specialTag="{{speciaTag}}">{{title}}</div>
+	<div class="pop_content">
+		<p class="step_des">{{description}}</p>
+		<ul class="options">
+			{{each options}}
+			<li class="option" data-des="{{$value.description}}" data-ending="{{$value.ending}}" data-id="{{$value.id}}" data-tag="{{$value.tag}}" data-move="{{$value.moveA}}" data-income="{{$value.income}}" data-expend="{{$value.expend}}" data-title="{{title}}">{{$value.name}}</li>	
+			{{/each}}
+		</ul>	
+	</div>
+</script>
+<script type="text/template" id="pop_end_template">
+	<h2 data-specialTag="{{moveTag}}">{{title}}</h2>	
+	<div class="pop_content">
+		<p>{{description}}</p>
+		<span class="end_button" data-move="{{move}}">{{ending}}</span>
+	</div>
+</script>	
+<script>
+	var share_title = "我在《钱进吧！体育》里面赚大发了！签约宁泽涛、包养科比再也不是梦！";
+</script>
+<script src="js/arttemplate.js" type="text/javascript" ></script>
+<script src="js/parabola.js" type="text/javascript" ></script>	
+<script src="js/json.js" type="text/javascript"></script>
+<script src="js/sports_game2015.js"></script>
+</body>
+</html>

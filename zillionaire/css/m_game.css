@@ -1,0 +1,504 @@
+@-webkit-keyframes money {
+  from {
+    top: 164px;
+    opacity: 1;
+    filter: alpha(opacity=100);
+  }
+  to {
+    top: 124px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+  }
+}
+@-o-keyframes money {
+  from {
+    top: 164px;
+    opacity: 1;
+    filter: alpha(opacity=100);
+  }
+  to {
+    top: 124px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+  }
+}
+@-moz-keyframes money {
+  from {
+    top: 164px;
+    opacity: 1;
+    filter: alpha(opacity=100);
+  }
+  to {
+    top: 124px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+  }
+}
+@keyframes money {
+  from {
+    top: 164px;
+    opacity: 1;
+    filter: alpha(opacity=100);
+  }
+  to {
+    top: 124px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+  }
+}
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "microsoft yahei";
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+h1 {
+  display: none;
+}
+.swiper-container {
+  width: 640px;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+  background: url(../images/mobile/bg.png);
+}
+.light {
+  background: url(../images/mobile/light.png) no-repeat;
+  width: 640px;
+  height: 569px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.logo {
+  width: 551px;
+  height: 427px;
+  position: absolute;
+  left: 45px;
+  top: 40px;
+}
+.logo_t {
+  position: absolute;
+  width: 360px;
+  height: 34px;
+  top: 467px;
+  left: 140px;
+}
+.state {
+  position: absolute;
+  left: 0;
+  top: 569px;
+  width: 100%;
+  height: 385px;
+}
+.state p {
+  font-size: 27px;
+  color: #fff;
+  line-height: 45px;
+  padding: 0 17px;
+}
+.start {
+  margin: 20px auto;
+  display: block;
+  width: 327px;
+  height: 85px;
+  line-height: 85px;
+  font-size: 35px;
+  text-align: center;
+  color: #fff;
+  background: #ffa927;
+  border-radius: 5px;
+  font-family: "微软雅黑";
+}
+.main_map {
+  display: none;
+}
+.field {
+  background: url(../images/mobile/field.png) no-repeat;
+  height: 562px;
+  width: 640px;
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+.go {
+  width: 152px;
+  height: 145px;
+  position: absolute;
+  top: 360px;
+  left: 25px;
+}
+.gesture {
+  width: 59px;
+  height: 98px;
+  position: absolute;
+  top: 485px;
+  left: 72px;
+}
+.man {
+  width: 399px;
+  height: 356px;
+  position: absolute;
+  top: 562px;
+  margin-left: -200px;
+  left: 50%;
+}
+.head {
+  width: 41px;
+  height: 42px;
+  position: absolute;
+  left: 567px;
+  top: 414px;
+}
+.box {
+  width: 227px;
+  height: 135px;
+  position: absolute;
+  left: 50px;
+  top: 60px;
+}
+.end_img {
+  width: 0;
+  height: 0;
+  left: 240px;
+  top: 192px;
+  position: absolute;
+  z-index: 15;
+}
+.dim {
+  width: 640px;
+  height: 505px;
+  left: 0;
+  top: 0;
+  position: absolute;
+  z-index: 10;
+  display: none;
+}
+.end_money {
+  dipslay: none;
+  width: 640px;
+  text-align: center;
+  z-index: 20;
+  top: 290px;
+  position: absolute;
+  height: 27px;
+}
+.end_money span {
+  display: inline-block;
+  width: 27px;
+  height: 27px;
+}
+.end_money .money1 {
+  background: url(../images/digit1.png) no-repeat;
+}
+.end_money .money2 {
+  background: url(../images/digit2.png) no-repeat;
+}
+.end_money .money3 {
+  background: url(../images/digit3.png) no-repeat;
+}
+.end_money .money4 {
+  background: url(../images/digit4.png) no-repeat;
+}
+.end_money .money5 {
+  background: url(../images/digit5.png) no-repeat;
+}
+.end_money .money6 {
+  background: url(../images/digit6.png) no-repeat;
+}
+.end_money .money7 {
+  background: url(../images/digit7.png) no-repeat;
+}
+.end_money .money8 {
+  background: url(../images/digit8.png) no-repeat;
+}
+.end_money .money9 {
+  background: url(../images/digit9.png) no-repeat;
+}
+.end_money .money0 {
+  background: url(../images/digit0.png) no-repeat;
+}
+.end_money .money_comma {
+  background: url(../images/comma.png) no-repeat;
+  margin: 0 -6px;
+}
+.grid li {
+  position: absolute;
+  width: 54px;
+  height: 54px;
+  list-style: none;
+}
+.pop {
+  width: 616px;
+  height: 502px;
+  background: url(../images/mobile/pop_bg.png) no-repeat;
+  position: absolute;
+  bottom: 0px;
+  left: 12px;
+  display: none;
+}
+.move_start {
+  text-align: center;
+}
+.move_start .name {
+  color: #fff600;
+  font-family: "微软雅黑";
+  font-size: 53px;
+  margin: 9px auto;
+  display: inline-block;
+}
+.move_start .des {
+  font-size: 26px;
+  color: #329207;
+  font-family: "微软雅黑";
+  line-height: 40px;
+  padding: 55px 17px 0;
+  text-align: left;
+}
+.move_start .options {
+  width: 600px;
+  height: 130px;
+  list-style-type: none;
+  margin: 20px 0 0 3px;
+  text-align: center;
+  display: block;
+  position: relative;
+}
+.move_start .options .option {
+  width: 280px;
+  height: 50px;
+  margin: 0 0 15px 15px;
+  display: inline-block;
+  background: #ffa825;
+  color: #fff;
+  font-family: "微软雅黑";
+  font-size: 32px;
+  text-align: center;
+}
+.move_end {
+  text-align: center;
+}
+.move_end .name {
+  color: #fff600;
+  font-family: "微软雅黑";
+  font-size: 53px;
+  margin: 9px auto;
+  display: inline-block;
+}
+.move_end .des {
+  font-size: 26px;
+  color: #329207;
+  font-family: "微软雅黑";
+  line-height: 40px;
+  padding: 55px 17px 0;
+  text-align: left;
+}
+.move_end .button {
+  width: 340px;
+  height: 65px;
+  margin-top: 20px;
+  line-height: 65px;
+  text-align: center;
+  display: inline-block;
+  background: #ffa825;
+  color: #fff;
+  font-family: "微软雅黑";
+  font-size: 24px;
+  border-radius: 5px;
+}
+.game_end {
+  width: 616px;
+  height: 462px;
+  position: absolute;
+  bottom: 50px;
+  left: 12px;
+  display: none;
+  background: url(../images/mobile/end_bg.png) no-repeat;
+  z-index: 30;
+}
+.game_end .conclusion {
+  padding: 45px;
+  border-bottom: 2px dotted #329207;
+  color: #329207;
+  font-family: "微软雅黑";
+  font-size: 35px;
+  font-weight: bold;
+}
+.game_end .tag_tips {
+  color: #329207;
+  font-family: "微软雅黑";
+  font-size: 24px;
+  text-align: center;
+  margin-top: 5px;
+}
+.game_end .tag {
+  color: #ff7800;
+  font-family: "微软雅黑";
+  font-size: 39px;
+  text-align: center;
+  display: block;
+}
+.game_end .tag_des {
+  color: #329207;
+  font-family: "微软雅黑";
+  font-size: 24px;
+  text-align: center;
+  width: 430px;
+  margin: 0 auto;
+}
+.game_end .button_box {
+  width: 430px;
+  margin: 10px auto 0;
+  height: 50px;
+}
+.game_end .button_box span {
+  height: 50px;
+  width: 200px;
+  line-height: 50px;
+  color: #fff;
+  font-family: "微软雅黑";
+  font-size: 24px;
+  text-align: center;
+  background: #ffa825;
+  border-radius: 5px;
+  display: block;
+  float: left;
+}
+.game_end .button_box .share {
+  margin-right: 30px;
+}
+.go_num {
+  width: 67px;
+  height: 78px;
+  position: absolute;
+  left: 342px;
+  top: 292px;
+  overflow: hidden;
+}
+.go_num span {
+  width: 67px;
+  height: 78px;
+  display: block;
+  font-size: 0;
+}
+.go_num .go1 {
+  background: url(../images/mobile/step1.png) no-repeat;
+}
+.go_num .go2 {
+  background: url(../images/mobile/step2.png) no-repeat;
+}
+.go_num .go3 {
+  background: url(../images/mobile/step3.png) no-repeat;
+}
+.go_num .go4 {
+  background: url(../images/mobile/step4.png) no-repeat;
+}
+.go_num .go5 {
+  background: url(../images/mobile/step5.png) no-repeat;
+}
+.go_num .go6 {
+  background: url(../images/mobile/step6.png) no-repeat;
+}
+.change_money {
+  position: fixed;
+  top: 164px;
+  left: 177px;
+  z-index: 30;
+  height: 22px;
+}
+.change_money span {
+  display: block;
+  float: left;
+  width: 23px;
+  height: 22px;
+}
+.change_an {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-animation: money linear 1s;
+  -moz-animation: money linear 1s;
+  -ms-animation: money linear 1s;
+  -o-animation: money linear 1s;
+  animation: money linear 1s;
+}
+.money {
+  height: 22px;
+  position: absolute;
+  left: 123px;
+  top: 164px;
+}
+.money span {
+  width: 23px;
+  height: 22px;
+  display: block;
+  float: left;
+}
+.money1 {
+  background: url(../images/mobile/money1.png) no-repeat;
+}
+.money2 {
+  background: url(../images/mobile/money2.png) no-repeat;
+}
+.money3 {
+  background: url(../images/mobile/money3.png) no-repeat;
+}
+.money4 {
+  background: url(../images/mobile/money4.png) no-repeat;
+}
+.money5 {
+  background: url(../images/mobile/money5.png) no-repeat;
+}
+.money6 {
+  background: url(../images/mobile/money6.png) no-repeat;
+}
+.money7 {
+  background: url(../images/mobile/money7.png) no-repeat;
+}
+.money8 {
+  background: url(../images/mobile/money8.png) no-repeat;
+}
+.money9 {
+  background: url(../images/mobile/money9.png) no-repeat;
+}
+.money0 {
+  background: url(../images/mobile/money0.png) no-repeat;
+}
+.money_comma {
+  background: url(../images/mobile/money_comma.png) no-repeat;
+  margin: 0 -6px;
+}
+.money_minus {
+  background: url(../images/mobile/money_minus.png) no-repeat;
+}
+.money_add {
+  background: url(../images/mobile/money_add.png) no-repeat;
+}
+.sharewx {
+  background: rgba(0, 0, 0, 0.8) url(../images/mobile/share1.png) right top no-repeat;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: none;
+  z-index: 99;
+}
+@media handheld, only screen and (max-height: 942px) {
+  .state {
+    top: 538px;
+  }
+  .start {
+    margin: 10px auto;
+  }
+}
+@media handheld, only screen and (max-height: 900px) {
+  .state {
+    top: 515px;
+  }
+  .start {
+    margin: 5px auto;
+  }
+}

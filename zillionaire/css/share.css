@@ -1,0 +1,87 @@
+
+.sashare-srap-new {
+  width: 181px;
+  margin: 0;
+  z-index: 9;
+  height: 24px;
+  line-height: 24px;
+  padding: 12px 0 12px 10px;
+  position: absolute;
+  top: 0;
+  left: -193px;
+}
+.sashare-srap-new ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.sashare-srap-new li {
+  float: left;
+  _display: inline;
+  padding: 0 2px;
+  margin-right: 8px;
+  cursor: pointer;
+}
+.sashare-srap-new li a {
+  float: left;
+  cursor: pointer;
+  text-decoration: none;
+}
+.sashare-srap-new li a .special-share-icon {
+  float: left;
+}
+.sashare-srap-new .extra {
+  float: left;
+  margin-left: 7px;
+}
+.sashare-srap-new .special-share-icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+  background: url(http://img1.cache.netease.com/cnews/css13/share_v2.1.png) no-repeat;
+  _background: url(http://img1.cache.netease.com/cnews/css13/share_v2.1_ie6.png) no-repeat;
+  -webkit-transition: background 0.3s cubic-bezier(0.17, 0.67, 0.88, 1.25), color 0.2s linear;
+  -moz-transition: background 0.3s cubic-bezier(0.17, 0.67, 0.88, 1.25), color 0.2s linear;
+  -o-transition: background 0.3s cubic-bezier(0.17, 0.67, 0.88, 1.25), color 0.2s linear;
+  transition: background 0.3s cubic-bezier(0.17, 0.67, 0.88, 1.25), color 0.2s linear;
+}
+.sashare-srap-new a:hover .special-share-163 {
+  background-position: 0 -25px;
+}
+.sashare-srap-new a:hover .special-share-sina {
+  background-position: -50px 0;
+}
+.sashare-srap-new a:hover .special-share-qzone {
+  background-position: -100px 0;
+}
+.sashare-srap-new a:hover .special-share-renren {
+  background-position: -150px 0;
+}
+.sashare-srap-new a:hover .special-share-youdao {
+  background-position: -200px 0;
+}
+.sashare-srap-new a:hover .special-share-yixin {
+  background-position: -250px 0;
+}
+.sashare-srap-new a:hover {
+  text-decoration: none;
+}
+.sashare-srap-new a .special-share-163 {
+  background-position: 0 -25px;
+}
+.sashare-srap-new a .special-share-sina {
+  background-position: -50px -25px;
+}
+.sashare-srap-new a .special-share-qzone {
+  background-position: -100px -25px;
+}
+.sashare-srap-new a .special-share-renren {
+  background-position: -150px -25px;
+}
+.sashare-srap-new a .special-share-youdao {
+  background-position: -200px -25px;
+}
+.sashare-srap-new a .special-share-yixin {
+  background-position: -250px -25px;
+}
